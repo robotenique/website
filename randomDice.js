@@ -6,7 +6,7 @@ function appendRandom(vect, noSides) {
 	vect.push(Math.ceil(Math.random() * noSides));
 }
 
-function estatistics(vect) {
+function distrib(vect) {
 	var size = vect.length;
 	var res = [];
 	for(var i = 0; i < size; i++) {
@@ -15,3 +15,6 @@ function estatistics(vect) {
 	return(res)
 }
 
+function mainFunction() {
+
+}
