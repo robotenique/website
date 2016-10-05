@@ -4,9 +4,11 @@
     font-weight: lighter;
     color: #616161;
     text-align: center;
-    text-shadow: 1px 1px #515151;
 }
 
+.centered {
+    margin: 25px 50px;
+}
 
 @font-face {
     font-family: tili;
