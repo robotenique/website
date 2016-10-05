@@ -13,9 +13,11 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<script type="text/javascript">
 	window.onload = function () {
-
-		var dps = []; // dataPoints
-        var dps2 = [];
+		// Data points matrix :
+        // dtp[0]=side 1, dtp[1]=side 2, dtp[2]=side 3, dtp[3]=side 4, dtp[4]=side 5, dtp[5]=side 6
+        var dtp =[[], [], [], [], [], []]
+        // Data frequency matrix
+        var dFreqs = [[0], [0], [0], [0], [0], [0]]
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title :{
 				text: "Great numbers law"
@@ -25,63 +27,75 @@
             },
 			data: [{
 				type: "line",
-				dataPoints: dps,
+				dataPoints: dtp[0],
 			},
             {
 				type: "line",
-				dataPoints: dps2,
+				dataPoints: dtp[1],
+			},
+            {
+				type: "line",
+				dataPoints: dtp[2],
+			},
+            {
+				type: "line",
+				dataPoints: dtp[3],
+			},
+            {
+				type: "line",
+				dataPoints: dtp[4],
+			},
+            {
+				type: "line",
+				dataPoints: dtp[5],
 			}
         ]
 		});
-
-		var xVal = 0;
-		var yVal = 0;
-        var dFreq = 0;
-		var updateInterval = 600;
-		var dataLength = 50; // number of dataPoints visible at any point
+		var xVal = 1;
+        // These are the entry
+		var updateInterval = 10;
+		var dataLength = 10; // number of dataPoints visible at any point
 
 		var updateChart = function (count) {
 			count = count || 1;
 			// count is number of times loop runs to generate random dataPoints.
 			for (var j = 0; j < count; j++) {
-                if(Math.floor(Math.random() * 6 + 1) == 6) {
-                    dFreq ++;
-                    yVal = dFreq/xVal;
-                }
-				dps.push({
-					x: xVal,
-					y: yVal
-				});
-                dps2.push({
-					x: xVal,
-					y: yVal+0.4
-				});
-				xVal++;
+                var rnd = Math.floor(Math.random() * 6 + 1);
+                dFreqs[rnd-1] ++;
+                for(var i = 0; i < 6; i++) {
+                    dtp[i].push({
+    					x: xVal,
+    					y: dFreqs[i]/xVal
+    				});
 
+                }
+				xVal++;
 			};
 
-			if (dps.length > dataLength && dps2.length > dataLength)
-			{
-				dps.shift();
-                dps2.shift();
-			}
 
 			chart.render();
 
 		};
 
+
+
 		// generates first set of dataPoints
 		updateChart(dataLength);
 
 		// update chart after specified time.
-		setInterval(function(){updateChart()}, updateInterval);
-
+		graphInterval = setInterval(function(){updateChart()}, updateInterval);
 	}
+    function stopGraph() {
+        clearInterval(graphInterval);
+    }
 	</script>
 	<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
 	<div id="chartContainer" style="height: 300px; width:100%;">
 	</div>
+    <button onclick="stopGraph()">STOP NOW!</button>
+
+
 </body>
 </html>
