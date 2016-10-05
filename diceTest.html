@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Scripts -->
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="randomDice.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script type="text/javascript">
+	window.onload = function () {
+
+		var dps = []; // dataPoints
+        var dps2 = [];
+		var chart = new CanvasJS.Chart("chartContainer",{
+			title :{
+				text: "Great numbers law"
+			},
+            axisY: {
+                maximum: 1
+            },
+			data: [{
+				type: "line",
+				dataPoints: dps,
+			},
+            {
+				type: "line",
+				dataPoints: dps2,
+			}
+        ]
+		});
+
+		var xVal = 0;
+		var yVal = 0;
+        var dFreq = 0;
+		var updateInterval = 600;
+		var dataLength = 50; // number of dataPoints visible at any point
+
+		var updateChart = function (count) {
+			count = count || 1;
+			// count is number of times loop runs to generate random dataPoints.
+			for (var j = 0; j < count; j++) {
+                if(Math.floor(Math.random() * 6 + 1) == 6) {
+                    dFreq ++;
+                    yVal = dFreq/xVal;
+                }
+				dps.push({
+					x: xVal,
+					y: yVal
+				});
+                dps2.push({
+					x: xVal,
+					y: yVal+0.4
+				});
+				xVal++;
+
+			};
+
+			if (dps.length > dataLength && dps2.length > dataLength)
+			{
+				dps.shift();
+                dps2.shift();
+			}
+
+			chart.render();
+
+		};
+
+		// generates first set of dataPoints
+		updateChart(dataLength);
+
+		// update chart after specified time.
+		setInterval(function(){updateChart()}, updateInterval);
+
+	}
+	</script>
+	<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 300px; width:100%;">
+	</div>
+</body>
+</html>
