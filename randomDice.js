@@ -16,5 +16,10 @@ function distrib(vect) {
 }
 
 function mainFunction() {
-	
+
 }
+
+$(document).ready(function() {
+	
+
+});
