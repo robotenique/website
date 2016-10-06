@@ -8,19 +8,31 @@
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="randomDice.js"></script>
+	<script type="text/javascript" src="diceGraph.js"> </script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 </head>
-<body bgcolor="#FFEFEF">
+<body bgcolor="#FFECEC">
 	<div class="w3-card-48 animated fadeInUp title">
 		<h1>Weak law of large numbers simulator</h1>
 	</div>
-	<div class="w3-third w3-card-2 w3-panel w3-pale-blue animated fadeIn" id="header">
+	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-pale-blue animated fadeIn" id="header">
 		<h3 id="sidebarText">What is this about?</h3>
-		<p>		This is a text.</p>
+		<p>This is a text.</p>
 	</div>
+	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
+		<h3>Test as fuck.</h3>
+		<div id="chartContainer" style="height: 500px; width:100%;">
+		</div>
+		<p>
+			<label>Number of sides of dice</label>
+			<input class="w3-input w3-border" type="text">
+		</p>
+		<button class="w3-btn w3-pale-blue animated fadeInUp" onclick="stopGraph()">Apply</button>
+	</div>
+
 </body>
 </html>
