@@ -5,6 +5,13 @@
     color: #616161;
 
 }
-p {
+#sidebarText {
+	font-size: 90%;
+	font-weight: bold;
+	font-family: "Arial", Sans-serif;
+	color: #808080
+}
 
+p {
+	font-size: 110%;
 }
