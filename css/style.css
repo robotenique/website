@@ -4,12 +4,16 @@
     font-weight: lighter;
     color: #616161;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .centered {
     margin: auto;
 }
 
+#graph {
+    padding: 20px;
+}
 
 @font-face {
     font-family: tili;
