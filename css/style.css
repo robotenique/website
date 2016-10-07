@@ -7,8 +7,12 @@
     margin-bottom: 20px;
 }
 
-.centered {
-    margin: auto;
+.center-left {
+    padding: 10px 0;
+}
+
+hr {
+    border-color: #CECECE;
 }
 
 #graph {

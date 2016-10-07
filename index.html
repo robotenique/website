@@ -5,20 +5,12 @@
 	<title>Weak law of large numbers simulator</title>
 	<!-- Scripts -->
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="randomDice.js"></script>
 	<script type="text/javascript" src="diceGraph.js"> </script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<style media="screen">
-		.myImg {
-			margin-left: 0 !important;
-			padding-left: 0 !important;
-		}
-	</style>
 </head>
 <body>
 	<div class="w3-section animated fadeInUp title">
@@ -30,8 +22,8 @@
 			<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
 			<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
 			<ul class="w3-ul">
-  				<li class="w3-padding-16 w3-hover-white w3-animate-zoom">
-					<img src="img/yellow.png" class="w3-center w3-circle myImg" style="width:80px">
+  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
+					<img src="img/yellow.png" class="w3-circle" style="width:80px">
     				<span class="w3-large">Face 1</span><br>
   				</li>
 			</ul>
@@ -42,17 +34,17 @@
 		</div>
 	</div>
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
-		<div id="chartContainer" style="height: 475px; width:100%; margin-top: 20px;">
+		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
 		<p>
 			<div class="w3-panel">
 				<div class="w3-half w3-panel">
-					<label>Amount of rolls</label>
+					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
 					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
 				</div>
 				<div class="w3-half w3-panel">
-					<label>Data length</label>
+					<label style="font-size: 120%;"><b>Data length</b></label>
 					<input class="w3-input w3-border" type="text">
 					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" onclick="">Apply</button>
 				</div>
