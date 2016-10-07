@@ -101,7 +101,14 @@ window.onload = function () {
   }
     addDataPointsAndRender();
     var renderButton = document.getElementById("renderButton");
+    var runInput = document.getElementById("numberX");
     renderButton.addEventListener("click", addDataPointsAndRender);
+    runInput.addEventListener("keydown",function(key){
+      if(key.keyCode == 13){
+        stopGraph();
+        addDataPointsAndRender();
+      }
+    });
 }
 
 function stopGraph() {
