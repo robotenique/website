@@ -17,22 +17,27 @@
 </head>
 <body bgcolor="#FFECEC">
 	<div class="w3-card-48 animated fadeInUp title">
-		<h1>Weak law of large numbers simulator</h1>
+		<h1>Weak Law of Large Numbers Simulator</h1>
 	</div>
-	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-pale-blue animated fadeIn" id="header">
+	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
 		<h3 id="sidebarText">What is this about?</h3>
-		<p>This site is an example of the weak law of large numbers.</p>
+		<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
+		<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
 	</div>
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
-		<h3>Test as fuck.</h3>
-		<div id="chartContainer" style="height: 500px; width:100%;">
+		<div id="chartContainer" style="height: 475px; width:100%; margin-top: 20px;">
 		</div>
 		<p>
-			<div class="w3-center w3-panel centered">
+			<div class="w3-panel">
 				<div class="w3-half w3-panel">
-					<label>Number of attempts </label>
+					<label>Amount of rolls</label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
 					<button class="w3-btn w3-pale-blue animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
+				</div>
+				<div class="w3-half w3-panel">
+					<label>Number of sides of dice</label>
+					<input class="w3-input w3-border" type="text">
+					<button class="w3-btn w3-teal animated fadeInUp" onclick="">Apply</button>
 				</div>
 			</div>
 		</p>
