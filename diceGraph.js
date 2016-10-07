@@ -21,7 +21,7 @@ window.onload = function () {
       var dFreqs = [[0], [0], [0], [0], [0], [0]]
       var chart = new CanvasJS.Chart("chartContainer",{
           title :{
-              text: "Great numbers law"
+              text: ""
           },
           axisY: {
               maximum: 1
@@ -75,7 +75,7 @@ window.onload = function () {
           count = count || 1;
           // count is number of times loop runs to generate random dataPoints.
           for (var j = 0; j < count; j++) {
-              var rnd = Math.floor(Math.random() * 6 + 1);
+              var rnd = Math.ceil(Math.random() * 6);
               dFreqs[rnd-1] ++;
               for(var i = 0; i < 6; i++) {
                   dtp[i].push({
