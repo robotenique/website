@@ -4,15 +4,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weak law of large numbers simulator</title>
 	<!-- Scripts -->
-	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="randomDice.js"></script>
 	<script type="text/javascript" src="diceGraph.js"> </script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<style media="screen">
 		.myImg {
@@ -21,42 +18,55 @@
 		}
 	</style>
 </head>
-<body bgcolor="#FFECEC">
-	<div class="w3-card-48 animated fadeInUp title">
+<body>
+	<div class="w3-section animated fadeInUp title">
 		<h1>Weak Law of Large Numbers Simulator</h1>
 	</div>
-	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
-		<h3 id="sidebarText">What is this about?</h3>
-		<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
-		<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
-		<ul class="w3-ul w3-card-4 ">
-  		<li class="w3-padding-16 w3-hover-white  w3-animate-zoom">
-				<img src="img/yellow.png" class="w3-center myImg" style="width:80px">
-    		<span class="w3-large">Face 1</span><br>
-  		</li>
-</ul>
+	<div class="w3-container w3-third">
+	 	<div class="w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
+			<h3 id="sidebarText">What is this about?</h3>
+			<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
+			<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
+			<ul class="w3-ul">
+  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
+					<img src="img/yellow.png" class="w3-circle" style="width:80px">
+    				<span class="w3-large">Face 1</span><br>
+  				</li>
+			</ul>
+		</div>
+		<div class="w3-card-2 w3-panel w3-yellow animated fadeIn">
+			<h4><b>How to:</b></h4>
+			<p>Just press the button.</p>
+		</div>
 	</div>
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
-		<div id="chartContainer" style="height: 475px; width:100%; margin-top: 20px;">
+		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
 		<p>
 			<div class="w3-panel">
 				<div class="w3-half w3-panel">
-					<label>Amount of rolls</label>
+					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
-					<button class="w3-btn w3-pale-blue animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
+					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
 				</div>
 				<div class="w3-half w3-panel">
-					<label>Number of sides of dice</label>
+					<label style="font-size: 120%;"><b>Data length</b></label>
 					<input class="w3-input w3-border" type="text">
-					<button class="w3-btn w3-teal animated fadeInUp" onclick="">Apply</button>
+					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" onclick="">Apply</button>
 				</div>
 			</div>
 		</p>
 	</div>
-	<footer class="w3-container animated fadeInUp">
+	<footer class="w3-container animated fadeInUp" style="padding = 5px;">
+		<hr>
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
+		<div class="w3-container w3-half">
+			<a href="http://linux.ime.usp.br/~robotenique"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-red"><b>Juliano</b></button></a>
+		</div>
+		<div class="w3-container w3-half">
+			<a href="https://github.com/pedro823"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-indigo"><b>Pedro</b></button></a>
+		</div>
 	<footer>
 </body>
 </html>
