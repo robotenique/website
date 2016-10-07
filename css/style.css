@@ -7,8 +7,9 @@
 }
 
 .centered {
-    margin: 25px 50px;
+    margin: auto;
 }
+
 
 @font-face {
     font-family: tili;

@@ -1,28 +1,45 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weak law of large numbers simulator</title>
 	<!-- Scripts -->
 	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="randomDice.js"></script>
+	<script type="text/javascript" src="diceGraph.js"> </script>
 	<!-- CSS -->
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 </head>
-<body bgcolor="#FFEFEF">
-	<h1 class="animated fadeInUp title">Weak law of large numbers simulator</h1>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-4 animated fadeIn">
-				<h3 class="title">Teste</h3>
-			</div>
-			<div class="col-md-4 animated fadeIn">
-				<h3>Teste2</h3>
-			</div>
-		</div>
+<body bgcolor="#FFECEC">
+	<div class="w3-card-48 animated fadeInUp title">
+		<h1>Weak law of large numbers simulator</h1>
 	</div>
+	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-pale-blue animated fadeIn" id="header">
+		<h3 id="sidebarText">What is this about?</h3>
+		<p>This site is an example of the weak law of large numbers.</p>
+	</div>
+	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
+		<h3>Test as fuck.</h3>
+		<div id="chartContainer" style="height: 500px; width:100%;">
+		</div>
+		<p>
+			<div class="w3-center w3-panel centered">
+				<div class="w3-half w3-panel">
+					<label>Number of sides of dice</label>
+					<input class="w3-input w3-border" type="text">
+					<button class="w3-btn w3-pale-blue animated fadeInUp" onclick="stopGraph()">Apply</button>
+				</div>
+			</div>
+		</p>
+	</div>
+	<footer class="w3-container animated fadeInUp">
+		<h4>Made by:</h4>
+		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
+	<footer>
 </body>
 </html>
