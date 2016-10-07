@@ -16,6 +16,7 @@ window.onload = function () {
       // Data points matrix :
       // dtp[0]=side 1, dtp[1]=side 2, dtp[2]=side 3, dtp[3]=side 4, dtp[4]=side 5, dtp[5]=side 6
       var dtp =[[], [], [], [], [], []]
+      var realProb = []
       // Data frequency matrix
       var dFreqs = [[0], [0], [0], [0], [0], [0]]
       var chart = new CanvasJS.Chart("chartContainer",{
@@ -24,6 +25,9 @@ window.onload = function () {
           },
           axisY: {
               maximum: 1
+          },
+          axisX: {
+            minimum: 1,
           },
           data: [{
               type: "line",
@@ -48,6 +52,15 @@ window.onload = function () {
           {
               type: "line",
               dataPoints: dtp[5],
+          },
+          {
+            type: "line",
+            color: "black",
+            markerType: "none",
+            legendText: "Real probability (1/6)",
+            name: "Real Probability",
+            showInLegend: true,
+            dataPoints: realProb,
           }
       ]
       });
@@ -71,6 +84,10 @@ window.onload = function () {
                   });
 
               }
+              realProb.push({
+                x: xVal,
+                y: 1.0/6,//Parsing to float
+              });
               xVal++;
           };
           chart.render();
