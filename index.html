@@ -16,35 +16,44 @@
 	<link rel="stylesheet" href="css/animate.css">
 </head>
 <body bgcolor="#FFECEC">
-	<div class="w3-card-48 animated fadeInUp title">
+	<div class="w3-section animated fadeInUp title">
 		<h1>Weak Law of Large Numbers Simulator</h1>
 	</div>
-	<div class="w3-container w3-quarter w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
-		<h3 id="sidebarText">What is this about?</h3>
-		<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
-		<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
-	</div>
-	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
-		<div id="chartContainer" style="height: 475px; width:100%; margin-top: 20px;">
+	<div class="w3-row-padding">
+		<div class="w3-container w3-quarter w3-card-2 w3-panel w3-light-blue animated fadeIn" id="header">
+			<h3 id="sidebarText">What is this about?</h3>
+			<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
+			<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
 		</div>
-		<p>
-			<div class="w3-panel">
-				<div class="w3-half w3-panel">
-					<label>Amount of rolls</label>
-					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
-					<button class="w3-btn w3-pale-blue animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
-				</div>
-				<div class="w3-half w3-panel">
-					<label>Number of sides of dice</label>
-					<input class="w3-input w3-border" type="text">
-					<button class="w3-btn w3-teal animated fadeInUp" onclick="">Apply</button>
-				</div>
+		<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
+			<div id="chartContainer" style="height: 475px; width:100%; margin-top: 20px;">
 			</div>
-		</p>
+			<p>
+				<div class="w3-panel">
+					<div class="w3-half w3-panel">
+						<label>Amount of rolls</label>
+						<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
+						<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
+					</div>
+					<div class="w3-half w3-panel">
+						<label>Data length</label>
+						<input class="w3-input w3-border" type="text">
+						<button class="w3-btn w3-teal w3-ripple animated fadeInUp" onclick="">Apply</button>
+					</div>
+				</div>
+			</p>
+		</div>
 	</div>
 	<footer class="w3-container animated fadeInUp">
+		<hr>
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
+		<div class="w3-container w3-half">
+			<a href="http://linux.ime.usp.br/~robotenique"><button class="w3-btn w3-ripple w3-light-grey w3-hover-red"><b>Juliano</b></button></a>
+		</div>
+		<div class="w3-container w3-half">
+			<a href="#"><button class="w3-btn w3-ripple w3-light-grey w3-hover-indigo"><b>Pedro</b></button></a>
+		</div>
 	<footer>
 </body>
 </html>
