@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weak law of large numbers simulator</title>
 	<!-- Scripts -->
@@ -21,11 +22,13 @@
 	<div class="w3-section animated fadeInUp title">
 		<h1>Weak Law of Large Numbers Simulator</h1>
 	</div>
-	<div class="w3-container w3-third">
+	<div class="w3-container w3-third"  id="wiki">
 	 	<div class="w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
 			<h3 id="sidebarText">What is this about?</h3>
 			<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
-			<p>The law of large numbers describes the result of performing the same experiment a large amount of times.</p>
+			<p>The <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">law of large numbers</a> describes the result of performing the same experiment a large amount of times.
+				 In practice, it dictates that, if repeated enough times, the accumulate results of the same experiment will tend to its probabilities.
+			</p>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/yellow.png" class="w3-circle" style="width:50px">
@@ -64,11 +67,15 @@
 			</ul>
 			<br>
 		</div>
-		<div class="w3-card-2 w3-panel w3-yellow animated fadeIn">
-			<h4><b>How to:</b></h4>
-			<p>Just press the button.</p>
+		<!--
+		<div class="w3-panel w3-card-2 animated fadeIn">
+			<p>Need help?</p>
+			<button class="w3-btn w3-yellow">Click here</button>
+			<br>
 		</div>
+		-->
 	</div>
+	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0;" />
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
@@ -81,14 +88,23 @@
 				</div>
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Data length</b></label>
-					<input class="w3-input w3-border" type="text">
-					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" onclick="">Apply</button>
+					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10">
+					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" click="stopGraph()">Apply</button>
 				</div>
 			</div>
 		</p>
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow">How to...</button>
+	</div>
+	<div class="w3-modal" id="howto">
+		<div class="w3-modal-content">
+			<span onclick="modalHide('howto')" class="w3-closebtn">&times;</span>
+			<h4>How to:</h4>
+			<p>Just press the button.</p>
+		</div>
 	</div>
 	<footer class="w3-container animated fadeInUp" style="padding = 5px;">
-		<hr>
+		<br><br>
+		<hr />
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
 		<div class="w3-container w3-half">

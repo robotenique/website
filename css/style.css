@@ -11,8 +11,25 @@
     padding: 10px 0;
 }
 
+.fake {
+  visibility:hidden
+}
+
+#wiki a {
+    color: #FFFFFF;
+}
+
+#wiki a:hover {
+    color: #D0D0EE;
+}
+
+
 hr {
     border-color: #CECECE;
+}
+
+footer {
+    z-index: 100;
 }
 
 #graph {
