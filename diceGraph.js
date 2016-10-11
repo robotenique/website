@@ -7,12 +7,15 @@
 window.onload = function () {
   function addDataPointsAndRender() {
       nHTML =  Number(document.getElementById("numberX").value);
-      if(isNaN(nHTML)) {
-        alert("ERROR: You must provide a Integer number!")
+      dataLength = Number(document.getElementById("numberL").value);
+      if(isNaN(nHTML) || isNaN(dataLength)) {
+        alert("ERROR: You must provide an Integer number!")
         return;
-      }
+    }
       if(!nHTML)
         nHTML = 1000;
+      if(!dataLength)
+        dataLength = 10; // number of dataPoints visible at any point
       // Data points matrix :
       // dtp[0]=side 1, dtp[1]=side 2, dtp[2]=side 3, dtp[3]=side 4, dtp[4]=side 5, dtp[5]=side 6
       var dtp =[[], [], [], [], [], []]
@@ -67,11 +70,11 @@ window.onload = function () {
       var xVal = 1;
       // These are the entry
       var updateInterval = 10;
-      var dataLength = 10; // number of dataPoints visible at any point
 
       var updateChart = function (count) {
         if (xVal > nHTML)
           clearInterval(graphInterval);
+
           count = count || 1;
           // count is number of times loop runs to generate random dataPoints.
           for (var j = 0; j < count; j++) {
@@ -101,15 +104,19 @@ window.onload = function () {
   }
     addDataPointsAndRender();
     var renderButton = document.getElementById("renderButton");
+    var dLengthButton = document.getElementById("dLengthButton");
     var runInput = document.getElementById("numberX");
+    var runInput2 = document.getElementById("numberL");
     renderButton.addEventListener("click", addDataPointsAndRender);
-    runInput.addEventListener("keydown",function(key){
-      if(key.keyCode == 13){
-        stopGraph();
-        addDataPointsAndRender();
-      }
+    dLengthButton.addEventListener("click", addDataPointsAndRender);
+    runInput.addEventListener("keydown",function(key) {
+        if(key.keyCode == 13){
+          stopGraph();
+          addDataPointsAndRender();
+        }
     });
 }
+
 
 function stopGraph() {
     clearInterval(graphInterval);

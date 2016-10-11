@@ -12,6 +12,11 @@
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
+	<style type="text/css">
+		.fake{
+			visibility:hidden
+		}
+	</style>
 </head>
 <body>
 	<div class="w3-section animated fadeInUp title">
@@ -76,8 +81,8 @@
 				</div>
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Data length</b></label>
-					<input class="w3-input w3-border" type="text">
-					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" style="padding: 6px 22px" onclick="">Apply</button>
+					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10" />
+					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" style="padding: 6px 22px" onclick="stopGraph()">Apply</button>
 				</div>
 			</div>
 		</p>
