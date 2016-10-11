@@ -12,13 +12,18 @@
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
+	<style type="text/css">
+		.fake{
+			visibility:hidden
+		}
+	</style>
 </head>
 <body>
 	<div class="w3-section animated fadeInUp title">
 		<h1>Weak Law of Large Numbers Simulator</h1>
 	</div>
 	<div class="w3-container w3-third"  id="wiki">
-	 	<div class="w3-card-2 w3-panel w3-blue animated fadeIn" id="header">
+	 	<div class="w3-card-4 w3-panel w3-blue animated fadeIn" id="header">
 			<h3 id="sidebarText">What is this about?</h3>
 			<p class="w3-opacity">This site is an example of the weak law of large numbers.</p>
 			<p>The <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">law of large numbers</a> describes the result of performing the same experiment a large amount of times.
@@ -27,50 +32,43 @@
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/yellow.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 1</span><br>
+    				<span class="w3-large">&emsp;Face 1</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/red.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 2</span><br>
+    				<span class="w3-large">&emsp;Face 2</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/lblue.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 3</span><br>
+    				<span class="w3-large">&emsp;Face 3</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/green.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 4</span><br>
+    				<span class="w3-large">&emsp;Face 4</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/blue.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 5</span><br>
+    				<span class="w3-large">&emsp;Face 5</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/purple.png" class="w3-circle" style="width:50px">
-    				<span class="w3-large">Face 6</span><br>
+    				<span class="w3-large">&emsp;Face 6</span><br>
   				</li>
 			</ul>
 			<br>
 		</div>
-		<!--
-		<div class="w3-panel w3-card-2 animated fadeIn">
-			<p>Need help?</p>
-			<button class="w3-btn w3-yellow">Click here</button>
-			<br>
-		</div>
-		-->
 	</div>
-	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0;" />
+	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0; margin-top: 0px; margin-bottom: 0px;" />
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
@@ -79,22 +77,27 @@
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
-					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" >Apply</button>
+					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" style="padding: 6px 22px !important">Apply</button>
 				</div>
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Data length</b></label>
-					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10">
-					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" click="stopGraph()">Apply</button>
+					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10" />
+					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" style="padding: 6px 22px" onclick="stopGraph()">Apply</button>
 				</div>
 			</div>
 		</p>
-		<button onclick="modalShow('howto');" class="w3-btn w3-yellow">How to...</button>
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important;"><b>Help</b></button>
 	</div>
 	<div class="w3-modal" id="howto">
-		<div class="w3-modal-content">
-			<span onclick="modalHide('howto')" class="w3-closebtn">&times;</span>
-			<h4>How to:</h4>
-			<p>Just press the button.</p>
+		<div class="w3-modal-content w3-pale-yellow">
+			<div class="w3-amber w3-card-8">
+				<span onclick="modalHide('howto')" class="w3-closebtn">&times;&emsp;</span>
+				<h2 class="w3-center">Help</p>
+			</div>
+			<div class="w3-container" style="line-height: 1.2 !important;">
+				<h3>How do I use this site?</h3>
+				<p style="font-size: 16px;">Just press the button.</p>
+			</div>
 		</div>
 	</div>
 	<footer class="w3-container animated fadeInUp" style="padding = 5px;">
@@ -102,10 +105,13 @@
 		<hr />
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
-		<div class="w3-container w3-half">
+		<div class="w3-container w3-third">
 			<a href="http://linux.ime.usp.br/~robotenique"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-red"><b>Juliano</b></button></a>
 		</div>
-		<div class="w3-container w3-half">
+		<div class="w3-container w3-third">
+			<a href="http://ime.usp.br/en"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-lime"><b>IME-USP</b></button></a>
+		</div>
+		<div class="w3-container w3-third">
 			<a href="https://github.com/pedro823"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-indigo"><b>Pedro</b></button></a>
 		</div>
 	</footer>
