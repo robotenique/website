@@ -23,6 +23,9 @@
     color: #D0D0EE;
 }
 
+#wiki img {
+    width: 50px;
+}
 
 hr {
     border-color: #CECECE;
@@ -34,6 +37,20 @@ footer {
 
 #graph {
     padding: 15px;
+}
+
+#belowChart button {
+    padding: 6px 22px !important;
+}
+
+#Helpbar {
+    line-height: 1.2 !important;
+    text-align: justify !important;
+    text-justify: inter-word;
+}
+
+#Helpbar p {
+    font-size: 16px;
 }
 
 @font-face {

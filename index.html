@@ -31,37 +31,37 @@
 			</p>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/yellow.png" class="w3-circle" style="width:50px">
+					<img src="img/yellow.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 1</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/red.png" class="w3-circle" style="width:50px">
+					<img src="img/red.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 2</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/lblue.png" class="w3-circle" style="width:50px">
+					<img src="img/lblue.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 3</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/green.png" class="w3-circle" style="width:50px">
+					<img src="img/green.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 4</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/blue.png" class="w3-circle" style="width:50px">
+					<img src="img/blue.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 5</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/purple.png" class="w3-circle" style="width:50px">
+					<img src="img/purple.png" class="w3-circle">
     				<span class="w3-large">&emsp;Face 6</span><br>
   				</li>
 			</ul>
@@ -73,30 +73,38 @@
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
 		<p>
-			<div class="w3-panel">
+			<div class="w3-panel" id="belowChart">
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
-					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()" style="padding: 6px 22px !important">Apply</button>
+					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()">Apply</button>
 				</div>
 				<div class="w3-half w3-panel">
-					<label style="font-size: 120%;"><b>Data length</b></label>
+					<label style="font-size: 120%;"><b>Start from</b></label>
 					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10" />
-					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" style="padding: 6px 22px" onclick="stopGraph()">Apply</button>
+					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" onclick="stopGraph()">Apply</button>
 				</div>
 			</div>
 		</p>
 		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important;"><b>Help</b></button>
 	</div>
-	<div class="w3-modal" id="howto">
+	<div class="w3-modal w3-animate-opacity" id="howto">
 		<div class="w3-modal-content w3-pale-yellow">
 			<div class="w3-amber w3-card-8">
 				<span onclick="modalHide('howto')" class="w3-closebtn">&times;&emsp;</span>
 				<h2 class="w3-center">Help</p>
 			</div>
-			<div class="w3-container" style="line-height: 1.2 !important;">
+			<div class="w3-container" id="Helpbar">
+				<h3>What is this chart for?</h3>
+				<p>The weak law of large numbers is best visualized with line chart.</p>
+				<p>This website, as one example, simulates rolling a dice several times, and calculating its relative frequency to the total of rolls.
+					Along the x-axis, you'll see the amount of rolls that have already gone. The y-axis represents the relative frequency of the dice faces.
+					Each line on the graph represents a dice face, 6 in total. Every roll is random, however, after enough amount of rolls, every time,
+					the relative frequency converges to 1/6 of the total rolls, or .166666...</p>
+				<p>We have also plotted a black line corresponding to that ideal amount.</p>
 				<h3>How do I use this site?</h3>
-				<p style="font-size: 16px;">Just press the button.</p>
+				<p>This website is very simple. There are two main things you can change to see the effect of the theorem.
+				Since we are simulating dice throws, the first input is the amount of rolls the computer should do.</p>
 			</div>
 		</div>
 	</div>
@@ -106,13 +114,13 @@
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
 		<div class="w3-container w3-third">
-			<a href="http://linux.ime.usp.br/~robotenique"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-red"><b>Juliano</b></button></a>
+			<a href="http://linux.ime.usp.br/~robotenique"><button class="w3-btn w3-ripple w3-round-xlarge w3-pale-blue w3-hover-red"><b>Juliano</b></button></a>
 		</div>
 		<div class="w3-container w3-third">
-			<a href="http://ime.usp.br/en"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-lime"><b>IME-USP</b></button></a>
+			<a href="http://ime.usp.br/en"><button class="w3-btn w3-ripple w3-round-xlarge w3-pale-blue w3-hover-lime"><b>IME-USP</b></button></a>
 		</div>
 		<div class="w3-container w3-third">
-			<a href="https://github.com/pedro823"><button class="w3-btn w3-ripple w3-round-xlarge w3-light-grey w3-hover-indigo"><b>Pedro</b></button></a>
+			<a href="https://github.com/pedro823"><button class="w3-btn w3-ripple w3-round-xlarge w3-pale-blue w3-hover-indigo"><b>Pedro</b></button></a>
 		</div>
 	</footer>
 </body>
