@@ -28,6 +28,10 @@ hr {
     border-color: #CECECE;
 }
 
+footer {
+    z-index: 100;
+}
+
 #graph {
     padding: 15px;
 }

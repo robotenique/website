@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weak law of large numbers simulator</title>
 	<!-- Scripts -->
@@ -61,11 +62,15 @@
 			</ul>
 			<br>
 		</div>
-		<div class="w3-card-2 w3-panel w3-yellow animated fadeIn">
-			<h4><b>How to:</b></h4>
-			<p>Just press the button.</p>
+		<!--
+		<div class="w3-panel w3-card-2 animated fadeIn">
+			<p>Need help?</p>
+			<button class="w3-btn w3-yellow">Click here</button>
+			<br>
 		</div>
+		-->
 	</div>
+	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0;" />
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
@@ -83,9 +88,18 @@
 				</div>
 			</div>
 		</p>
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow">How to...</button>
+	</div>
+	<div class="w3-modal" id="howto">
+		<div class="w3-modal-content">
+			<span onclick="modalHide('howto')" class="w3-closebtn">&times;</span>
+			<h4>How to:</h4>
+			<p>Just press the button.</p>
+		</div>
 	</div>
 	<footer class="w3-container animated fadeInUp" style="padding = 5px;">
-		<hr>
+		<br><br>
+		<hr />
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
 		<div class="w3-container w3-half">
