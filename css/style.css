@@ -40,3 +40,12 @@ footer {
     font-family: tili;
     src: url('cssref/tilireg.ttf');
 }
+#sliderBox {
+    left :0
+}
+#redS  {
+    width: 48%;
+    margin: 15px;
+}
+#redS .ui-slider-range { background: #46F000; }
+#redS .ui-slider-handle { border-color: #000000; }

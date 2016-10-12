@@ -8,10 +8,13 @@
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="randomDice.js"></script>
 	<script type="text/javascript" src="diceGraph.js"> </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<style type="text/css">
 		.fake{
 			visibility:hidden
@@ -72,8 +75,18 @@
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
+        <div class="w3-left-align">
+
+
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+
+        <p><b><u>Update speed</u></b></p>
+        <div id="redS"></div>
+    </div>
 		<p>
-			<div class="w3-panel">
+	<div class="w3-panel">
 				<div class="w3-half w3-panel">
 					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
