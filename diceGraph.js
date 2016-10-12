@@ -133,7 +133,11 @@ window.onload = function () {
     function refreshBkg() {
       var color = $( "#redS" ).slider("value");
       /* -> color slider transition!*/
-      hex = rgbToHex(color+40, 270-color, 0);
+      if(color<100)
+        hex = rgbToHex(0,Math.ceil(6.375*color-382.5),Math.ceil(-2.55*color+255));
+      else
+        hex = rgbToHex(Math.ceil(2.55*color-255), Math.ceil(-5.375*color+892,5),0);
+        
       $( "#redS .ui-slider-range" ).css( "background-color", "#" + hex );
     }
 
