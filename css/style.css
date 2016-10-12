@@ -11,8 +11,16 @@
     padding: 10px 0;
 }
 
+.wrapper-center {
+    text-align: center !important;
+}
+
+.centralized {
+    left: 25%;
+}
+
 .fake {
-  visibility:hidden
+  visibility: hidden;
 }
 
 #wiki a {
@@ -61,7 +69,7 @@ footer {
     left :0
 }
 #redS  {
-    width: 48%;
+    width: 50%;
     margin: 15px;
 }
 #redS .ui-slider-range { background: #0000B2; }

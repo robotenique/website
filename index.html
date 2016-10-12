@@ -15,11 +15,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<style type="text/css">
-		.fake{
-			visibility:hidden
-		}
-	</style>
 </head>
 <body>
 	<div class="w3-section animated fadeInUp title">
@@ -75,16 +70,13 @@
 	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
 		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
 		</div>
-        <div class="w3-left-align">
-
-
-<div id="red"></div>
-<div id="green"></div>
-<div id="blue"></div>
-
-        <p><b><u>Update speed</u></b></p>
-        <div id="redS"></div>
-    </div>
+        <div class="wrapper-center">
+			<div id="red"></div>
+			<div id="green"></div>
+			<div id="blue"></div>
+        	<p style="font-weight: normal; font-size:110%; line-height: 0;"></u><b>Update speed</b></u></p>
+        	<div class="centralized" id="redS"></div>
+    	</div>
 		<p>
 			<div class="w3-panel" id="belowChart">
 				<div class="w3-half w3-panel">
@@ -99,7 +91,7 @@
 				</div>
 			</div>
 		</p>
-		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important;"><b>Help</b></button>
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
 	</div>
 	<div class="w3-modal w3-animate-opacity" id="howto">
 		<div class="w3-modal-content w3-pale-yellow">
