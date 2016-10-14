@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
 <html>
+<!-- HTML for the law of large numbers
+	By Juliano Garcia & Pedro Pereira, IME-USP -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,32 +68,12 @@
 			<br>
 		</div>
 	</div>
-	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0; margin-top: 0px; margin-bottom: 0px;" />
-	<div class="w3-container w3-rest w3-panel w3-card-2 animated fadeInUp" id="graph">
-		<div id="chartContainer" style="height: 450px; width:100%; margin-top: 20px;">
-		</div>
-        <div class="wrapper-center">
-			<div id="red"></div>
-			<div id="green"></div>
-			<div id="blue"></div>
-        	<p style="font-weight: normal; font-size:110%; line-height: 0;"></u><b>Update speed</b></u></p>
-        	<div class="centralized" id="redS"></div>
-    	</div>
-		<p>
-			<div class="w3-panel" id="belowChart">
-				<div class="w3-half w3-panel">
-					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
-					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
-					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()">Apply</button>
-				</div>
-				<div class="w3-half w3-panel">
-					<label style="font-size: 120%;"><b>Start from</b></label>
-					<input class="w3-input w3-border" id="numberL" type="text" placeholder="10" />
-					<button class="w3-btn w3-teal w3-ripple animated fadeInUp" id="dLengthButton" onclick="stopGraph()">Apply</button>
-				</div>
-			</div>
-		</p>
-		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
+	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0; margin-top: 0px; margin-bottom: -10px;" />
+	<div class="animated fadeInUp">
+		<iframe src="iframedice.html" width="66%" height="732px"></iframe>
+	</div>
+	<div class="wrapper-center">
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow animated fadeInUp" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
 	</div>
 	<div class="w3-modal w3-animate-opacity" id="howto">
 		<div class="w3-modal-content w3-pale-yellow">
@@ -108,8 +90,9 @@
 					the relative frequency converges to 1/6 of the total rolls, or .166666...</p>
 				<p>We have also plotted a black line corresponding to that ideal amount.</p>
 				<h3>How do I use this site?</h3>
-				<p>This website is very simple. There are two main things you can change to see the effect of the theorem.
-				Since we are simulating dice throws, the first input is the amount of rolls the computer should do.</p>
+				<p>This website is very simple. There are three main things you can change to see the effect of the theorem.
+				Since we are simulating dice throws, the first input is the amount of rolls the computer should do. Lower this to stop the graph earlier.
+				The second input is the "Start from" </p>
 			</div>
 		</div>
 	</div>

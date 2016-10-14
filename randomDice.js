@@ -26,8 +26,3 @@ function modalShow(id) {
 function modalHide(id) {
 	document.getElementById(id).style.display = 'none';
 }
-
-$(document).ready(function() {
-
-
-});
