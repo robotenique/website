@@ -70,9 +70,16 @@
 	</div>
 	<hr style="height: 1pt; padding: 0px; border-top: 0; border: 0; margin-top: 0px; margin-bottom: -10px;" />
 	<div class="animated fadeInUp">
-		<iframe src="iframedice.html" width="66%" height="732px"></iframe>
+		<iframe src="iframedice.html" width="66%" height="732px" id="graphFrame"></iframe>
 	</div>
 	<div class="wrapper-center">
+		<div class="w3-dropdown-click animated fadeInUp">
+			<button onclick="dropdownShow('dropdown')" class="w3-btn w3-indigo" style="padding: 6px 30px !important; font-weight: bold;">Coin/Dice</button>
+			<div class="w3-dropdown-content" id="dropdown">
+				<a class="w3-btn w3-yellow w3-hover-indigo" onclick="setURL('graphFrame', 'iframecoin.html')"><b>Coin</b></a>
+				<a class="w3-btn w3-yellow w3-hover-indigo" onclick="setURL('graphFrame', 'iframedice.html')"><b>Dice</b></a>
+			</div>
+		</div>
 		<button onclick="modalShow('howto');" class="w3-btn w3-yellow animated fadeInUp" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
 	</div>
 	<div class="w3-modal w3-animate-opacity" id="howto">
