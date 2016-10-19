@@ -34,3 +34,16 @@ function dropdownShow(id) {
 function setURL(id, url) {
 	document.getElementById(id).src = url;
 }
+
+function startStop(id) {
+	var x = document.getElementById(id);
+	if(x.className.indexOf("stopped") == -1) {
+		x.className += " stopped";
+		stopGraph();
+	}
+	else {
+		x.className = x.className.replace(" stopped", "");
+		stopGraph();
+		addDataPointsAndRender();
+	}
+}

@@ -134,8 +134,14 @@ window.onload = function () {
     dLengthButton.addEventListener("click", addDataPointsAndRender);
     runInput.addEventListener("keydown",function(key) {
         if(key.keyCode == 13){
-          stopGraph();
-          addDataPointsAndRender();
+            stopGraph();
+            addDataPointsAndRender();
+        }
+    });
+    runInput2.addEventListener("keydown", function(key) {
+        if(key.keycode == 13) {
+            stopGraph();
+            addDataPointsAndRender();
         }
     });
 
