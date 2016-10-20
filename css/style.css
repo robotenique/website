@@ -43,6 +43,15 @@ footer {
     z-index: 100;
 }
 
+iframe {
+    outline: none;
+    border: none;
+}
+
+iframe[seamless] {
+    display: block;
+}
+
 #graph {
     padding: 15px;
 }

@@ -19,6 +19,7 @@
  }
 
 window.onload = function () {
+    var flag = false;
     $( "#redS" ).slider({
         orientation: "horizontal",
         max : 200,
@@ -137,15 +138,24 @@ window.onload = function () {
         hex = rgbToHex(0,Math.ceil(6.375*color-382.5),Math.ceil(-2.55*color+255));
       else
         hex = rgbToHex(Math.ceil(2.55*color-255), Math.ceil(-5.375*color+892,5),0);
-        
+
       $( "#redS .ui-slider-range" ).css( "background-color", "#" + hex );
     }
-
+    function startOrStop() {
+        var bText = flag ? 'Stop' : 'Restart';
+        if (flag)
+            addDataPointsAndRender();
+        else
+            stopGraph();
+        $("#startStopButton").html(bText);
+        flag = !flag;
+    }
     var renderButton = document.getElementById("renderButton");
     var dLengthButton = document.getElementById("dLengthButton");
     var runInput = document.getElementById("numberX");
     var runInput2 = document.getElementById("numberL");
     var sliderHolder = document.getElementById("slider");
+    var stop =  document.getElementById("startStopButton");
     renderButton.addEventListener("click", addDataPointsAndRender);
     dLengthButton.addEventListener("click", addDataPointsAndRender);
     runInput.addEventListener("keydown",function(key) {
@@ -154,6 +164,7 @@ window.onload = function () {
           addDataPointsAndRender();
         }
     });
+    startStopButton.addEventListener("click", startOrStop);
 
 }
 function stopGraph() {
