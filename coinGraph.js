@@ -1,4 +1,4 @@
-// Código para gerar os dados e exibir o gráfico
+// Código para gerar os dados da moeda e exibir o gráfico
 // Por Pedro Pereira & Juliano Garcia, IME-USP
 /*Control variables:
  * updateInterval (miliseconds to update the data)
@@ -62,32 +62,18 @@ window.onload = function () {
           data: [{
               type: "line",
               dataPoints: dtp[0],
+              color: "green",
           },
           {
               type: "line",
               dataPoints: dtp[1],
-          },
-          {
-              type: "line",
-              dataPoints: dtp[2],
-          },
-          {
-              type: "line",
-              dataPoints: dtp[3],
-          },
-          {
-              type: "line",
-              dataPoints: dtp[4],
-          },
-          {
-              type: "line",
-              dataPoints: dtp[5],
+              color: "red",
           },
           {
             type: "line",
             color: "black",
             markerType: "none",
-            legendText: "Real probability (1/6)",
+            legendText: "Real probability (1/2)",
             name: "Real Probability",
             showInLegend: true,
             dataPoints: realProb,
@@ -105,9 +91,9 @@ window.onload = function () {
           count = count || 1;
           // count is number of times loop runs to generate random dataPoints.
           for (var j = 0; j < count; j++) {
-              var rnd = Math.ceil(Math.random() * 6);
+              var rnd = Math.ceil(Math.random() * 2);
               dFreqs[rnd-1] ++;
-              for(var i = 0; i < 6; i++) {
+              for(var i = 0; i < 2; i++) {
                   dtp[i].push({
                       x: xVal,
                       y: dFreqs[i]/xVal
@@ -116,7 +102,7 @@ window.onload = function () {
               }
               realProb.push({
                 x: xVal,
-                y: 1.0/6,//Parsing to float
+                y: 1.0/2, //Parsing to float
               });
               xVal++;
           };
@@ -159,6 +145,8 @@ window.onload = function () {
             addDataPointsAndRender();
         }
     }
+
+    // Add listeners and callback process
     var renderButton = document.getElementById("renderButton");
     var dLengthButton = document.getElementById("dLengthButton");
     var maxNButton = document.getElementById("numberX");
@@ -170,6 +158,7 @@ window.onload = function () {
     startNButton.addEventListener("keydown",proccessInput);
     maxNButton.addEventListener("keydown",proccessInput);
     startStopButton.addEventListener("click", startOrStop);
+
 
 }
 function stopGraph() {
