@@ -9,7 +9,7 @@
 	<!-- Scripts -->
 	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="randomDice.js"></script>
-	<script type="text/javascript" src="diceGraph.js"> </script>
+	<script type="text/javascript" src="coinGraph.js"> </script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- CSS -->
@@ -31,38 +31,14 @@
 			</p>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/yellow.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 1</span><br>
+					<img src="img/green.png" class="w3-circle">
+    				<span class="w3-large">&emsp;Head</span><br>
   				</li>
 			</ul>
 			<ul class="w3-ul">
   				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
 					<img src="img/red.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 2</span><br>
-  				</li>
-			</ul>
-			<ul class="w3-ul">
-  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/lblue.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 3</span><br>
-  				</li>
-			</ul>
-			<ul class="w3-ul">
-  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/green.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 4</span><br>
-  				</li>
-			</ul>
-			<ul class="w3-ul">
-  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/blue.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 5</span><br>
-  				</li>
-			</ul>
-			<ul class="w3-ul">
-  				<li class="w3-padding-16 w3-hover-white w3-center center-left w3-animate-zoom">
-					<img src="img/purple.png" class="w3-circle">
-    				<span class="w3-large">&emsp;Face 6</span><br>
+    				<span class="w3-large">&emsp;Tails</span><br>
   				</li>
 			</ul>
 			<br>
@@ -79,7 +55,7 @@
 		<p>
 			<div class="w3-panel" id="belowChart">
 				<div class="w3-half w3-panel">
-					<label style="font-size: 120%;"><b>Amount of rolls</b></label>
+                    <label style="font-size: 120%;"><b>Amount of throws</b></label>
 					<input class="w3-input w3-border" id="numberX" type="text" placeholder="1000">
 					<button class="w3-btn w3-blue w3-ripple animated fadeInUp" id="renderButton" onclick="stopGraph()">Apply</button>
 				</div>
@@ -103,11 +79,11 @@
 			<div class="w3-container" id="Helpbar">
 				<h3>What is this chart for?</h3>
 				<p>The weak law of large numbers is best visualized with line chart.</p>
-				<p>This website, as one example, simulates rolling a dice several times, and calculating its relative frequency to the total of rolls.
-					Along the x-axis, you'll see the amount of rolls that have already gone. The y-axis represents the relative frequency of the dice faces.
-					Each line on the graph represents a dice face, 6 in total. Every roll is random, however, after enough amount of rolls, every time,
-					the relative frequency converges to 1/6 of the total rolls, or 0.166666...</p>
-				<p>We have also plotted a black line corresponding to that ideal amount.</p>
+				<p>This website, as one example, simulates throwing a coin several times, and calculating its relative frequency to the total of throws.
+					Along the x-axis, you'll see the amount of throws that have already gone. The y-axis represents the relative frequency of each coin side.
+					Each line in the graph represents one of the coin sides, 2 in total. Every roll is random, however, after enough amount of rolls, every time,
+					the relative frequency converges to 1/2, or 0.5.</p>
+				<p>We have also plotted a black line corresponding to that ideal probability.</p>
 				<h3>How do I use this site?</h3>
 				<p>This website is very simple. There are four main things you can change to see the effect of the theorem.
                 Since we are simulating dice and coin throws, the first input is the dropdown, right next to the Help button,

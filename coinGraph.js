@@ -19,6 +19,7 @@
  }
 
 window.onload = function () {
+    var flag = false;
     $( "#redS" ).slider({
         orientation: "horizontal",
         max : 200,
@@ -61,10 +62,12 @@ window.onload = function () {
           data: [{
               type: "line",
               dataPoints: dtp[0],
+              color: "green",
           },
           {
               type: "line",
               dataPoints: dtp[1],
+              color: "red",
           },
           {
             type: "line",
@@ -114,6 +117,7 @@ window.onload = function () {
   }
 
     addDataPointsAndRender();
+    // Refresh the background-color of the slider
     function refreshBkg() {
       var color = $( "#redS" ).slider("value");
       /* -> color slider transition!*/
@@ -124,26 +128,37 @@ window.onload = function () {
 
       $( "#redS .ui-slider-range" ).css( "background-color", "#" + hex );
     }
-
-    var renderButton = document.getElementById("renderButton");
-    var dLengthButton = document.getElementById("dLengthButton");
-    var runInput = document.getElementById("numberX");
-    var runInput2 = document.getElementById("numberL");
-    var sliderHolder = document.getElementById("slider");
-    renderButton.addEventListener("click", addDataPointsAndRender);
-    dLengthButton.addEventListener("click", addDataPointsAndRender);
-    runInput.addEventListener("keydown",function(key) {
+    // Start or Stop the graph, and set the correct text in the button
+    function startOrStop() {
+        var bText = flag ? 'Stop' : 'Restart';
+        if (flag)
+            addDataPointsAndRender();
+        else
+            stopGraph();
+        $("#startStopButton").html(bText);
+        flag = !flag;
+    }
+    // If key is "Enter", then executes the code
+    function proccessInput(key) {
         if(key.keyCode == 13){
             stopGraph();
             addDataPointsAndRender();
         }
-    });
-    runInput2.addEventListener("keydown", function(key) {
-        if(key.keycode == 13) {
-            stopGraph();
-            addDataPointsAndRender();
-        }
-    });
+    }
+
+    // Add listeners and callback process
+    var renderButton = document.getElementById("renderButton");
+    var dLengthButton = document.getElementById("dLengthButton");
+    var maxNButton = document.getElementById("numberX");
+    var startNButton = document.getElementById("numberL");
+    var sliderHolder = document.getElementById("slider");
+    var startStopButton =  document.getElementById("startStopButton");
+    renderButton.addEventListener("click", addDataPointsAndRender);
+    dLengthButton.addEventListener("click", addDataPointsAndRender);
+    startNButton.addEventListener("keydown",proccessInput);
+    maxNButton.addEventListener("keydown",proccessInput);
+    startStopButton.addEventListener("click", startOrStop);
+
 
 }
 function stopGraph() {
