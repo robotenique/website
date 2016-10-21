@@ -52,6 +52,10 @@ iframe[seamless] {
     display: block;
 }
 
+#github {
+    opacity: 30%;
+}
+
 #graph {
     padding: 15px;
 }

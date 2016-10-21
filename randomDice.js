@@ -30,7 +30,3 @@ function dropdownShow(id) {
 	else
 		x.className = x.className.replace(" w3-show", "");
 }
-
-function setURL(id, url) {
-	document.getElementById(id).src = url;
-}
