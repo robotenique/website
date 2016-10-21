@@ -94,6 +94,16 @@
             <button id="startStopButton" class="w3-btn-block w3-red w3-bold" style="margin-bottom: 20px; width: 75% !important;">Stop</button>
         </div>
 	</div>
+	<div class="wrapper-center">
+		<div class="w3-dropdown-click animated fadeInUp">
+			<button onclick="dropdownShow('dropdown')" class="w3-btn w3-indigo" style="padding: 6px 30px !important; font-weight: bold;">Coin/Dice</button>
+			<div class="w3-dropdown-content" id="dropdown">
+				<a class="w3-btn w3-pale-yellow w3-hover-indigo" href="coingraph.html"><b>Coin</b></a>
+				<a class="w3-btn w3-pale-yellow w3-hover-indigo" href="#"><b>Dice</b></a>
+			</div>
+		</div>
+		<button onclick="modalShow('howto');" class="w3-btn w3-yellow animated fadeInUp" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
+	</div>
 	<div class="w3-modal w3-animate-opacity" id="howto">
 		<div class="w3-modal-content w3-pale-yellow">
 			<div class="w3-amber w3-card-8">
@@ -121,8 +131,6 @@
 		</div>
 	</div>
 	<footer class="w3-container animated fadeInUp" style="padding = 5px;">
-		<br><br>
-		<button onclick="modalShow('howto');" class="w3-btn w3-yellow" style="padding: 6px 30px !important; font-weight: bold;">Help</button>
 		<hr />
 		<h4>Made by:</h4>
 		<p>Juliano Garcia &amp; Pedro Pereira, students of the Institute of Maths and Statistics, University of S&atilde;o Paulo.</p>
@@ -138,7 +146,7 @@
 		<br>
         <br>
         <br>
-        <a href="https://github.com/GreaterNumbersLaw/website"><img src="img/github.png" style="opacity: 30%;"></a>
+		<a href="https://github.com/GreaterNumbersLaw/website"><img src="img/github.png"></a>
 	</footer>
 </body>
 </html>
