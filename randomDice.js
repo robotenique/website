@@ -1,7 +1,6 @@
 // Código em Javascript para demonstração da lei fraca dos grandes números
 // Por Pedro Pereira & Juliano Garcia, IME-USP
 
-//CanvasJS
 function appendRandom(vect, noSides) {
 	vect.push(Math.ceil(Math.random() * noSides));
 }
