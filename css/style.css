@@ -53,7 +53,7 @@ iframe[seamless] {
 }
 
 #github {
-    opacity: 30%;
+    opacity: 0.3;
 }
 
 #graph {
@@ -79,7 +79,7 @@ iframe[seamless] {
     src: url('cssref/tilireg.ttf');
 }
 #sliderBox {
-    left :0
+    left: 0;
 }
 #redS  {
     width: 50%;
