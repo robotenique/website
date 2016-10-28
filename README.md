@@ -2,7 +2,19 @@
 [Check out the website!](https://linux.ime.usp.br/~robotenique/prog/wk/)
 
 Welcome to the repository for the Law of large numbers website! Here is where we
-upload the latest version of the website. Here it is, explained, how it works:
+upload the latest version of the website.
+
+---
+
+## You do not need to download anything!
+
+You can use the project without downloading anything, just click [here](https://linux.ime.usp.br/~robotenique/prog/wk/).
+
+---
+
+###Você não precisa baixar nada!
+
+Você pode checar o projeto integral sem baixar nada. Só clique [aqui](https://linux.ime.usp.br/~robotenique/prog/wk/).
 
 ---
 
