@@ -20,6 +20,8 @@
 
 window.onload = function () {
     var flag = false;
+    var randInt1 =MRG32k3a().uint32;
+    console.log(1+randInt1()%6);
     $( "#redS" ).slider({
         orientation: "horizontal",
         max : 200,
@@ -97,15 +99,35 @@ window.onload = function () {
       var xVal = 1;
       //Time interval
       var updateInterval = 201 - $( "#redS" ).slider("value");
-
+      /* ---Desvios---
+       * MRG32k3a = 0.0008961519541594268 | 0.000798489405440844 | 0.0008644396968574041
+       * KISS07 = 0.0007846344364230665 | 0.0005626272316698236 | 0.0009459454931575798
+       * Kybos = 0.0011625152125679893 | 0.0009636965703402947 | 0.0013364640777434038 *BEM LIXO
+       * LFib = 0.0006664579270579404 | 0.0005714188146330138 | 0.0015376604648969865
+       * LFIB4 = 0.0009912363003575161 | 0.0009892226135640022 | 0.000995251451175317
+       * Alea = 0.0005696713523923849 | 0.0010072008711408743 | 0.0007782551888171341
+       */
       var updateChart = function (count) {
-        if (xVal > nHTML)
+        if (xVal > nHTML) {
+            console.log("--------TERMINOU!-------");
+            console.log("Face 1 = "+dFreqs[0]/xVal);
+            console.log("Face 2 = "+dFreqs[1]/xVal);
+            console.log("Face 3 = "+dFreqs[2]/xVal);
+            console.log("Face 4 = "+dFreqs[3]/xVal);
+            console.log("Face 5 = "+dFreqs[4]/xVal);
+            console.log("Face 6 = "+dFreqs[5]/xVal);
+            var variancia = 0;
+            for (var i = 0; i < dFreqs.length; i++) {
+                variancia += Math.pow(((dFreqs[i]/xVal) - 0.16666666666),2);
+            }
+            variancia = variancia/xVal;
+            console.log("Desvio Padrao: "+Math.sqrt(variancia));
           clearInterval(graphInterval);
-
+      }
           count = count || 1;
           // count is number of times loop runs to generate random dataPoints.
           for (var j = 0; j < count; j++) {
-              var rnd = Math.ceil(Math.random() * 6);
+              var rnd = 1+randInt1()%6;
               dFreqs[rnd-1] ++;
               for(var i = 0; i < 6; i++) {
                   dtp[i].push({
